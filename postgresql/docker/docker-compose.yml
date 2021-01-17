@@ -1,0 +1,19 @@
+version: '3'
+services:
+  database:
+    image: "postgres" # use latest official postgres version
+    container_name: "lance_postgresql"
+    ports:
+      - 5432:5432
+    env_file:
+      - database.env # configure postgres
+    volumes:
+      - posgresql-data:/var/lib/postgresql/data/
+
+volumes:
+  posgresql-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: d:\docker_volumes\pgdata
