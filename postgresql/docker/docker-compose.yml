@@ -9,6 +9,8 @@ services:
       - database.env # configure postgres
     volumes:
       - posgresql-data:/var/lib/postgresql/data/
+    cpu_count: 2
+    mem_limit: 4gb
 
 volumes:
   posgresql-data:
@@ -16,4 +18,4 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: d:\docker_volumes\pgdata
+      device: e:\docker_volumes\pgdata
