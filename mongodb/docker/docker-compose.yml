@@ -1,0 +1,15 @@
+version: "2.2"
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: lance_mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - /home/ldeng/mongo_data:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+    cpu_count: 2
+    mem_limit: 4gb
