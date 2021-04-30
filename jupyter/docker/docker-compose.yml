@@ -1,9 +1,12 @@
-version: "3.9"
+version: "2.2"
 services:
   web:
     build: .
-    container_name: "jupyter_and_airflow"
+    container_name: "ldeng_jupyter"
+    user: 6079:500
     ports:
-      - 8888:8888
+      - 6079:8888
     volumes:
-      - C:\Dropbox\_projects:/home/jovyan/work
+      - /data/ldeng:/home/jovyan
+    cpu_count: 64
+    mem_limit: 256gb
