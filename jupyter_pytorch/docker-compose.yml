@@ -1,0 +1,18 @@
+
+version: "2.2"
+services:
+  jupyter_pytorch:
+    build: .
+    container_name: "ldeng_pytorch"
+    network_mode: host
+    environment:
+      - PYTHONPATH=${PYTHONPATH}:/workspace/wip
+      - TD_API_KEY=
+    volumes:
+      - /home/ldeng:/workspace
+    cpu_count: 8
+    mem_limit: 32gb
+    shm_size: 1gb
+    ulimits:
+      memlock: -1
+      stack: 67108864
