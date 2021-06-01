@@ -14,10 +14,14 @@ RUN pip install \
 	  ipywidgets \
           python-lsp-server \
 	  pigeonXT-jupyter \
-	  nodejs \ 
+	  nodejs \
+	  pytorch \ 
           --upgrade
 
 RUN jupyter nbextension enable --py widgetsnbextension
+
+# Limit the number of threads for tokenizers
+ENV RAYON_RS_NUM_CPUS=64
 
 # Disable jedi
 RUN ipython profile create

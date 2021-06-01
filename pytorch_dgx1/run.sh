@@ -7,6 +7,7 @@ docker run \
   --ulimit memlock=-1 \
   --ulimit stack=67108864 \
   --net=host \
+  --ipc=host \
   -e PYTHONPATH=$PYTHONPATH:/workspace/wip \
   -v /data/ldeng:/workspace \
   --name ldeng_pytorch \
