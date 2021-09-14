@@ -1,16 +1,15 @@
-docker build -t ldeng_pytorch .
+docker build -t ldeng_scraping .
 docker run \
-  --gpus '"device=0,1,2,3,4,5,6,7"' \
   -d \
-  --memory=256g \
-  --memory-swap=64g \
+  --memory=64g \
+  --memory-swap=8g \
   --rm \
-  --shm-size=8g \
+  --shm-size=1g \
   --ulimit memlock=-1 \
   --ulimit stack=67108864 \
   --net=host \
   --ipc=host \
   -e PYTHONPATH=$PYTHONPATH:/workspace/wip:/workspace/extract_product_attributes \
   -v /data/ldeng:/workspace \
-  --name ldeng_pytorch \
-  ldeng_pytorch
+  --name ldeng_scraping \
+  ldeng_scraping

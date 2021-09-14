@@ -15,11 +15,9 @@ RUN pip install \
           python-lsp-server \
 	  pigeonXT-jupyter \
 	  nodejs \
-	  torch==1.8.1 \
-	  pytorch-lightning \ 
+	  torch \
 	  fasttext \
-	  gensim \
-	  python-Levenshtein \ 
+	  langdetect \ 
           --upgrade
 
 RUN jupyter nbextension enable --py widgetsnbextension
@@ -37,4 +35,4 @@ ENV TINI_VERSION v0.6.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
 RUN chmod +x /usr/bin/tini
 ENTRYPOINT ["/usr/bin/tini", "--"]
-CMD ["jupyter", "lab", "--allow-root", "--ip=0.0.0.0", "--port=6079", "--no-browser", "--NotebookApp.password='sha1:07a7bdd44734:c683e1e9158d4e43eae6be11468c40ef99309267'"]
+CMD ["jupyter", "lab", "--allow-root", "--ip=0.0.0.0", "--port=16079", "--no-browser", "--NotebookApp.password='sha1:07a7bdd44734:c683e1e9158d4e43eae6be11468c40ef99309267'"]
