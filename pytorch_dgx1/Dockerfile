@@ -19,7 +19,8 @@ RUN pip install \
 	  pytorch-lightning \ 
 	  fasttext \
 	  gensim \
-	  python-Levenshtein \ 
+	  python-Levenshtein \
+	  pyarrow \ 
           --upgrade
 
 RUN jupyter nbextension enable --py widgetsnbextension
