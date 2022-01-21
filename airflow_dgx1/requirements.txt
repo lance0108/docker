@@ -1,0 +1,22 @@
+virtualenv
+boto3==1.17
+coloredlogs==15.0.1
+Flask==2.0.2
+ipython==7
+ipywidgets==7.6.4
+jupyterlab==3.1.10
+pandas==1.1.5
+protobuf==3.19.1
+pyarrow==5.0.0
+PyHive==0.6.1
+pytorch-lightning==1.4.7
+s3fs==2021.10.1
+sasl==0.3.1
+scikit-learn
+sympy==1.9
+thrift-sasl==0.4.3
+transformers==4.10.0
+typing-extensions==4.0.1
+ujson==4.1.0
+torch==1.8.2+cu102
+-f https://download.pytorch.org/whl/lts/1.8/torch_lts.html

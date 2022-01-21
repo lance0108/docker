@@ -25,6 +25,11 @@ RUN pip install \
 
 RUN jupyter nbextension enable --py widgetsnbextension
 
+# pyhive
+RUN apt-get update && apt-get install -y libsasl2-modules libsasl2-dev
+RUN pip install sasl==0.3.1 thrift-sasl==0.4.3 PyHive==0.6.4
+
+ENV PYTHONPATH=$PYTHONPATH:/workspace/wip:/workspace/extract_product_attributes:/workspace/product_listing_classification
 # Limit the number of threads for tokenizers
 ENV RAYON_RS_NUM_CPUS=8
 ENV TOKENIZERS_PARALLELISM=true

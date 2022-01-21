@@ -10,7 +10,6 @@ docker run \
   --ulimit stack=67108864 \
   --net=host \
   --ipc=host \
-  -e PYTHONPATH=$PYTHONPATH:/workspace/wip:/workspace/extract_product_attributes \
   -v /data/ldeng:/workspace \
   --name ldeng_pytorch \
   ldeng_pytorch
